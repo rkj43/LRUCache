@@ -19,11 +19,44 @@ This approach is similar to solving the LRU cache problem on [LeetCode](https://
 - **Item Eviction Event**: An event is triggered when an item is evicted, allowing the consumer to know when items get evicted.
 - **Dependency Injection**: Demonstrated in the LRUCache.Demo project, showing how to use the cache as a singleton using dependency injection.
 
-## How to Use
 ### Dependency Injection
 Dependency injection can be done in the consumer class, and it is demonstrated in the LRUCache.Demo project.
 ### Event for Item Eviction
 To subscribe to the item eviction event, refer to the LRUCache project and the corresponding test cases in the LRUCache.Tests project.
+
+## Instructions for Using LRUCache Library
+
+### Step 1: Reference the Library
+To use the LRUCache library, first, add it as a dependency to your project.
+
+### Step 2: Initialize the Cache
+Initialize the LRUCache with the desired capacity.:
+```csharp
+ICache<string, int> cache = new LRUCache<string, int>(5); // Initializes a cache with a capacity of 5.
+```
+### Step 3: Dependency Injection(optional)
+Register the LRUCache as a singleton in your service collection
+```csharp
+services.AddSingleton<ICache<string, int>>(_ => new LRUCache<string, int>(5));
+```
+### Step 4: Use the cache
+- Adding Items to Cache
+```csharp
+cache.Add("one", 1);
+```
+- Getting Items from Cache
+```csharp
+int value = cache.Get("one"); //  1
+```
+- Removing Items from Cache
+```csharp
+cache.Remove("one");
+```
+### Step 5: Subscribing to Event
+```csharp
+cache.ItemEvicted += (key, value) => Console.WriteLine($"Item Evicted - Key: {key}, Value: {value}");
+
+```
 
 ## Testing
 The LRUCache.Tests project contains NUnit tests covering basic use cases and scenarios, including adding, retrieving, removing items, and item eviction events.
