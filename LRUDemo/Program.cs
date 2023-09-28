@@ -7,12 +7,12 @@ class Program
 {
     static void Main()
     {
-        // Dependency Injection for Singleton Use
-        var serviceProvider = new ServiceCollection()
-            .AddSingleton<ICache<string, int>>(provider => new LRUCache<string, int>(5)) // Singleton with capacity 5
-            .BuildServiceProvider();
+        var services = new ServiceCollection();
+        services.AddSingleton<ICache<string, int>, LRUCache<string, int>>(_ => new LRUCache<string, int>(5));
+        var provider = services.BuildServiceProvider();
 
-        var cache = serviceProvider.GetRequiredService<ICache<string, int>>();
+        var cache = provider.GetService<ICache<string, int>>();
+
 
         // Subscribe to the ItemEvicted event
         cache.ItemEvicted += (key, value) => Console.WriteLine($"Item Evicted - Key: {key}, Value: {value}");
