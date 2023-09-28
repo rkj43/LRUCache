@@ -30,6 +30,10 @@ The LRUCache.Tests project contains NUnit tests covering basic use cases and sce
 
 ## Conclusion
 This LRUCache Library  is a versatile and reusable component, adhering to SOLID principles and allowing developers to efficiently manage in-memory storage with the flexibility of configuration and the assurance of thread safety.
+## Time Spent
+I spent around 2-3 hours working on this library. A good chunk of that time went into looking up the best ways to do things to make sure I was on the right track and that the library would be solid and efficient.
+
+Besides the coding part, I also spent some time brushing up on and getting to grips with some key concepts like Dependency Injection, Unit Testing, and how to handle Events. Getting a deeper understanding of these things was really important to make the library strong and easy to maintain, and to make sure everything was up to scratch in terms of quality and maintainability.
 
 ## Resources I found useful while working on this
 - https://www.albahari.com/threading/
