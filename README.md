@@ -16,11 +16,14 @@ This approach is similar to solving the LRU cache problem on [LeetCode](https://
 ## Features
 - **Configurable Capacity**: The cache's capacity is configurable at runtime by the consumer.
 - **Thread Safety**: All methods are thread-safe.
+- **Item Eviction Event**: An event is triggered when an item is evicted, allowing the consumer to know when items get evicted.
 - **Dependency Injection**: Demonstrated in the LRUCache.Demo project, showing how to use the cache as a singleton using dependency injection.
 
 ## How to Use
 ### Dependency Injection
 Dependency injection can be done in the consumer class, and it is demonstrated in the LRUCache.Demo project.
+### Event for Item Eviction
+To subscribe to the item eviction event, refer to the LRUCacheLibrary project and the corresponding test cases in the LRUCache.Tests project.
 
 ## Testing
 The LRUCache.Tests project contains NUnit tests covering basic use cases and scenarios, including adding, retrieving, removing items, and item eviction events.
@@ -31,5 +34,9 @@ This LRUCache Library Solution is a versatile and reusable component, adhering t
 ## Resources I found useful while working on this
 - https://www.albahari.com/threading/
 - https://stackoverflow.com/questions/1735071/is-it-ok-to-lock-on-system-collections-generic-listt
-- neetcode.io
+- [neetcode.io](https://neetcode.io/)
+- [Writing NUnit Tests](https://www.youtube.com/watch?v=HYrXogLj7vg&t=2064s)https://www.youtube.com/watch?v=HYrXogLj7vg&t=2064s
+- https://www.webtrainingroom.com/csharp/unit-testing
+- [Dependency Injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-7.0)
+- [Using DI container for singleton](https://stackoverflow.com/questions/53825155/how-can-i-use-microsoft-extensions-dependencyinjection-in-an-net-core-console-a)
 
