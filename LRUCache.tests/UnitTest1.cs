@@ -3,7 +3,7 @@ namespace LRUCache.tests
     public class LRUTests
     {
         [SetUp]
-        public void Setup()
+        public void Setup() // we don't really need any set up since we are not using the same conditions for all the tests
         {
         }
 
@@ -70,12 +70,51 @@ namespace LRUCache.tests
         }
 
         [Test]
-        public void Should_Return_False_And_Set_Value_To_Default_When_Key_Does_Not_Exist()
+        public void TryGetValue_ShouldReturnFalseAndSetValueToDefault_WhenKeyDoesNotExist()
         {
             var cache = new LRUCache<string, int>(5);
-            Assert.IsFalse(cache.TryGetValue("one", out var value));
+
+            var result = cache.TryGetValue("one", out var value);
+
+            Assert.IsFalse(result);
             Assert.AreEqual(default(int), value);
         }
+
+        [Test]
+        public void ItemEvictedEvent_ShouldBeTriggered_WhenItemIsEvicted()
+        {
+
+            var cache = new LRUCache<string, int>(2); 
+            bool isEventTriggered = false;
+            cache.ItemEvicted += (key, value) => isEventTriggered = true; // Subscribe to the event
+
+            cache.Add("one", 1);
+            cache.Add("two", 2);
+            cache.Add("three", 3); // Adding this should evict "one" and trigger the event
+
+            Assert.IsTrue(isEventTriggered);
+        }
+
+        [Test]
+        public void ItemEvictedEvent_ShouldHaveCorrectEvictedItem_WhenItemIsEvicted()
+        {
+            var cache = new LRUCache<string, int>(2);
+            string evictedKey = null;
+            int evictedValue = 0;
+            cache.ItemEvicted += (key, value) =>
+            {
+                evictedKey = key;
+                evictedValue = value;
+            }; // Subscribe to the event
+
+            cache.Add("one", 1);
+            cache.Add("two", 2);
+            cache.Add("three", 3); // should evict "one" and trigger the event
+
+            Assert.AreEqual("one", evictedKey);
+            Assert.AreEqual(1, evictedValue);
+        }
+
 
     }
 }

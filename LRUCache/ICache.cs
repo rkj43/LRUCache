@@ -7,4 +7,5 @@ public interface ICache<TKey, TValue>
     bool TryGetValue(TKey key, out TValue value);
     void Remove(TKey key);
     void Clear();
+    event Action<TKey, TValue> ItemEvicted;
 }

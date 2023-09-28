@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using LRUCache;
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -13,6 +14,9 @@ class Program
 
         var cache = serviceProvider.GetRequiredService<ICache<string, int>>();
 
+        // Subscribe to the ItemEvicted event
+        cache.ItemEvicted += (key, value) => Console.WriteLine($"Item Evicted - Key: {key}, Value: {value}");
+
         // Demo
         cache.Add("one", 1);
         cache.Add("two", 2);
@@ -23,6 +27,7 @@ class Program
         Console.WriteLine(cache.Get("one")); // Should print 1
 
         cache.Add("six", 6); // This should evict "two" because it is least recently used. ( We just used "one" above)
+
         try
         {
             Console.WriteLine(cache.Get("two")); // Should throw KeyNotFoundException

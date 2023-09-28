@@ -15,6 +15,7 @@
             _capacity = capacity;
         }
 
+        public event Action<TKey, TValue> ItemEvicted;
         public void Add(TKey key, TValue value)
         {
             lock (_cacheMap)
@@ -24,6 +25,9 @@
                     var lastNode = _lruList.Last;
                     _cacheMap.Remove(lastNode.Value.Key);
                     _lruList.RemoveLast();
+
+                    // Trigger Event when evicted
+                    ItemEvicted?.Invoke(lastNode.Value.Key, lastNode.Value.Value);
                 }
 
                 var cacheItem = new CacheItem(key, value);
@@ -110,5 +114,4 @@
             }
         }
     }
-
 }
