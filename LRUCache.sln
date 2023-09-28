@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LRUCache", "LRUCache\LRUCac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LRUCache.tests", "LRUCache.tests\LRUCache.tests.csproj", "{5DA32407-16E8-4744-A35F-DD3219114850}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LRUDemo", "LRUDemo\LRUDemo.csproj", "{8AED3B00-0946-4267-962E-D024F4FF2B22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5DA32407-16E8-4744-A35F-DD3219114850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DA32407-16E8-4744-A35F-DD3219114850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DA32407-16E8-4744-A35F-DD3219114850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AED3B00-0946-4267-962E-D024F4FF2B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AED3B00-0946-4267-962E-D024F4FF2B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AED3B00-0946-4267-962E-D024F4FF2B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AED3B00-0946-4267-962E-D024F4FF2B22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
