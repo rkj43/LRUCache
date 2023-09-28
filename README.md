@@ -35,7 +35,7 @@ This LRUCache Library  is a versatile and reusable component, adhering to SOLID 
 - https://www.albahari.com/threading/
 - https://stackoverflow.com/questions/1735071/is-it-ok-to-lock-on-system-collections-generic-listt
 - [neetcode.io](https://neetcode.io/)
-- [Writing NUnit Tests](https://www.youtube.com/watch?v=HYrXogLj7vg&t=2064s)https://www.youtube.com/watch?v=HYrXogLj7vg&t=2064s
+- [Writing NUnit Tests](https://www.youtube.com/watch?v=HYrXogLj7vg&t=2064s)
 - https://www.webtrainingroom.com/csharp/unit-testing
 - [Dependency Injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-7.0)
 - [Using DI container for singleton](https://stackoverflow.com/questions/53825155/how-can-i-use-microsoft-extensions-dependencyinjection-in-an-net-core-console-a)
