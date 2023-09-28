@@ -1,4 +1,4 @@
-# LRUCache Library Solution
+ # LRUCache Library Solution
 
 ## Overview
 This solution provides a generic, in-memory cache component, designed to be used by developers in their applications. It is capable of storing arbitrary types of objects, which are added and retrieved using a unique key, similar to a dictionary. The cache has a configurable threshold for the maximum number of items it can hold at any one time.
@@ -37,7 +37,7 @@ ICache<string, int> cache = new LRUCache<string, int>(5); // Initializes a cache
 ### Step 3: Dependency Injection(optional)
 Register the LRUCache as a singleton in your service collection
 ```csharp
-services.AddSingleton<ICache<string, int>>(_ => new LRUCache<string, int>(5));
+services.AddSingleton<ICache<string, int>, LRUCache<string, int>>(_ => new LRUCache<string, int>(5));
 ```
 ### Step 4: Use the cache
 - Adding Items to Cache
