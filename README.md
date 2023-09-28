@@ -4,8 +4,8 @@
 This solution provides a generic, in-memory cache component, designed to be used by developers in their applications. It is capable of storing arbitrary types of objects, which are added and retrieved using a unique key, similar to a dictionary. The cache has a configurable threshold for the maximum number of items it can hold at any one time.
 
 ## Projects
-1. **LRUCacheLibrary**: This is the main project where the LRUCache is implemented. It contains the logic for adding, retrieving, and removing items based on the LRU policy.
-2. **LRUCache.Tests**: This project contains all the NUnit test cases for the LRUCacheLibrary.
+1. **LRUCache**: This is the main project where the LRUCache is implemented. It contains the logic for adding, retrieving, and removing items based on the LRU policy.
+2. **LRUCache.Tests**: This project contains all the NUnit test cases for the LRUCache.
 3. **LRUCache.Demo**: A simple project demonstrating the usage of the LRUCache with Dependency Injection.
 
 ## LRU Cache (Least Recently Used)
@@ -23,13 +23,13 @@ This approach is similar to solving the LRU cache problem on [LeetCode](https://
 ### Dependency Injection
 Dependency injection can be done in the consumer class, and it is demonstrated in the LRUCache.Demo project.
 ### Event for Item Eviction
-To subscribe to the item eviction event, refer to the LRUCacheLibrary project and the corresponding test cases in the LRUCache.Tests project.
+To subscribe to the item eviction event, refer to the LRUCache project and the corresponding test cases in the LRUCache.Tests project.
 
 ## Testing
 The LRUCache.Tests project contains NUnit tests covering basic use cases and scenarios, including adding, retrieving, removing items, and item eviction events.
 
 ## Conclusion
-This LRUCache Library Solution is a versatile and reusable component, adhering to SOLID principles and allowing developers to efficiently manage in-memory storage with the flexibility of configuration and the assurance of thread safety.
+This LRUCache Library  is a versatile and reusable component, adhering to SOLID principles and allowing developers to efficiently manage in-memory storage with the flexibility of configuration and the assurance of thread safety.
 
 ## Resources I found useful while working on this
 - https://www.albahari.com/threading/
